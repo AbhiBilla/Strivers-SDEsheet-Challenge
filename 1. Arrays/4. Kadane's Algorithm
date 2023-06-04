@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int cm=0,msf=INT_MIN;
+        for(auto it : nums){
+            cm+=it;
+            msf = max(msf,cm);
+            if(cm<0) cm=0;
+        }
+        return msf;
+    }
+};
