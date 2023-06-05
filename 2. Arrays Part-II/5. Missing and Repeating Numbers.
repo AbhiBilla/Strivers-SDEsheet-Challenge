@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+
+pair<int,int> missingAndRepeating(vector<int> &arr, int n)
+{
+	long long Sn = (n*(n+1))/2;
+	long long S2n = (n*(n+1)*(2*n+1))/6;
+	long long s=0,s2=0;
+	for(int i=0;i<n;i++){
+		s+=arr[i];
+		s2+=(long long)arr[i]*(long long)arr[i];
+	}
+    long long v1 = s-Sn;
+	long long v2 = s2-S2n;
+	v2 = v2/v1;
+	long long x  = (v1+v2)/2;
+	long long y = x-v1;
+    return {(int)y,(int)x};
+}
