@@ -1,0 +1,11 @@
+#include <bits/stdc++.h> 
+int uniquePaths(int m, int n) {
+	int r = n-1;
+	int d = m-1;
+	double sum = 1;
+	int N=r+d;
+        for(int i = 1; i <= r; i++){
+            sum = sum * (N - (r) + i) / i;
+        }
+	return (int)sum;
+}
