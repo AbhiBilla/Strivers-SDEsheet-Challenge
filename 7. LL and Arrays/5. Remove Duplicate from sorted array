@@ -1,0 +1,19 @@
+class Solution {
+public:
+  int removeDuplicates(vector<int>& arr) {
+    int n = arr.size();
+		if(n==1) return 1;
+		int i=0,c=0;
+		for(int l=1;l<n;l++){
+			if(arr[i]==arr[l]){
+				c++;
+				continue;
+			}
+			else{
+				arr[i+1]=arr[l];
+				i++;
+			}
+		}
+		return i+1;
+  }
+};
