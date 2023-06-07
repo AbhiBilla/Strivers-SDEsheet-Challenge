@@ -1,0 +1,38 @@
+/**
+ * Definition for singly-linked list.
+ * class Node {
+ * public:
+ *     int data;
+ *     Node *next;
+ *     Node() : data(0), next(nullptr) {}
+ *     Node(int x) : data(x), next(nullptr) {}
+ *     Node(int x, Node *next) : data(x), next(next) {}
+ * };
+ */
+
+Node *rotate(Node *head, int k) {
+     Node * tp=head;
+     Node* last = NULL;
+     if(k==0) return head;
+     int c=0;
+     while(tp){
+          last=tp;
+          c++;
+          tp=tp->next;
+     }
+     if(c==k || c==1) return head;
+     last->next=head;
+     int e = (c-(k%c))-1;
+     Node* t=head;
+     Node* n=head->next;
+     while(e--){
+       t=t->next;
+       n=n->next;
+     }
+     t->next=NULL;
+     //while(n->next!=NULL){
+          //n=n->next;
+     //}
+     //n->next=head;
+     return n;
+}
