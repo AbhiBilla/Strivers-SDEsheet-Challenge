@@ -1,0 +1,53 @@
+#include <bits/stdc++.h> 
+int findMinimumCoins(int a) 
+{
+    int c=0;
+    while(a>0){
+    if(a>=1000){
+        a-=1000;
+        c++;
+        continue;
+    }
+    if(a>=500){
+        a-=500;
+        c++;
+        continue;
+    }
+    if(a>=100){
+        a-=100;
+        c++;
+        continue;
+    }
+    if(a>=50){
+        a-=50;
+        c++;
+        continue;
+    }
+    if(a>=20){
+        a-=20;
+        c++;
+        continue;
+    }
+    if(a>=10){
+        a-=10;
+        c++;
+        continue;
+    }
+    if(a>=5){
+        a-=5;
+        c++;
+        continue;
+    }
+    if(a>=2){
+        a-=2;
+        c++;
+        continue;
+    }
+    if (a >= 1) {
+      a -= 1;
+      c++;
+      continue;
+    }
+    }
+    return c;
+}
