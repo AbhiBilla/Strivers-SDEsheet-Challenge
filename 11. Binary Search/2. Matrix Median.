@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+int getMedian(vector<vector<int>> &matrix)
+{
+    // Write your code here.
+    int arr[1001];
+    int k=0;
+    for(int i=0;i<matrix.size();i++){
+        for(int j=0;j<matrix[0].size();j++){
+            arr[k] = matrix[i][j];
+            k++;
+        }
+    }
+    //cout<<k<<endl;
+    sort(arr,arr+k);
+    return arr[(k)/2];
+}
