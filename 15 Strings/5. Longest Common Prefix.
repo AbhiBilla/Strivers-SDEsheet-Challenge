@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+string longestCommonPrefix(vector<string> &arr, int n)
+{
+    int m =INT_MAX;
+    string ans="";
+    for(int i=0;i<n;i++){
+      int s=arr[i].size();
+      m = min(m,s);
+    }
+    for(int i=0;i<m;i++){
+        char c = arr[0][i];
+        for(int j=0;j<n;j++){
+            if(c!=arr[j][i]){
+                return ans;
+            }
+        }
+        ans+=c;
+    }
+    return ans;
+}
+
+
