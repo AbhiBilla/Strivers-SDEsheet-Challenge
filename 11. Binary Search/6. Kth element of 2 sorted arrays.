@@ -1,0 +1,31 @@
+int ninjaAndLadoos(vector<int> &row1, vector<int> &row2, int m, int n, int k) {
+    // Write your code here.
+    int var=0,c=0;
+    int i,j;
+    for(i=0,j=0; i<m && j<n; ){
+        if(c==k) return var;
+        else if(row1[i]<=row2[j]){
+            c++;
+            var=row1[i];
+            i++;
+        }
+        else{
+            c++;
+            var=row2[j];
+            j++;
+        }
+    }
+    if(i==m){
+        while(c!=k && j<n){
+            var=row2[j];
+            j++;
+        }
+    }
+    else{
+        while(c!=k && i<m){
+            var=row1[i];
+            i++;
+        }
+    }
+    return var;
+}
